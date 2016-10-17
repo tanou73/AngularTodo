@@ -2,7 +2,14 @@
     <div class="header"> </div>
 
     <div class="card">
-      <h2>Procrastination list</h2>
-      <!-- <todo ng-repeat="todo in todoListCtrl.todos"></todo> -->
+        <h2>Procrastination list</h2>
+
+        <md-input-container class="new-todo">
+            <label>New todo</label>
+            <input ng-model="todoListCtrl.newTodo" ng-keypress="todoListCtrl.onKeypress($event)">
+        </md-input-container>
+
+        <todo ng-repeat="todo in todoListCtrl.todos"
+              ng-model="todo" on-delete="todoListCtrl.deleteTodo(id)"></todo>
     </div>
 </div>

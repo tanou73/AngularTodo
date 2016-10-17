@@ -1,0 +1,16 @@
+<div class="todo" layout="row" ng-class="{ checked: todoCtrl.todo.checked }">
+    <!-- Checkbox -->
+    <md-checkbox flex="5" ng-model="todoCtrl.todo.checked"></md-checkbox>
+
+    <!-- Input -->
+    <md-input-container flex="90" md-no-float>
+        <label>Todo</label>
+        <input ng-model="todoCtrl.todo.content">
+    </md-input-container>
+
+    <!-- Delete icon -->
+    <div flex="5" class="delete-icon"
+         ng-click="todoCtrl.onDeleteIconClick()">
+        <i class="fa fa-trash-o"></i>
+    </div>
+</div>

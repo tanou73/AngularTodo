@@ -1,7 +1,9 @@
 (() => {
+
   angular.module('app-dependencies', [
       'ui.router',
-      'ngAnimate'
+      'ngAnimate',
+      'ngMaterial'
   ]);
 
   angular.module('todoApp', [
@@ -15,4 +17,5 @@
       $urlRouterProvider.otherwise('/todos');
 
   });
+
 })();
