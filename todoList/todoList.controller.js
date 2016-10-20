@@ -4,7 +4,7 @@
     .module('todoList')
     .controller('TodoListController', TodoListController);
 
-    function TodoListController () {
+    function TodoListController (todoListService) {
         var todoListCtrl = this;
 
         todoListCtrl.deleteTodo = deleteTodo;
@@ -13,31 +13,21 @@
         //////////////
 
         function deleteTodo(content) {
-            _.remove(todoListCtrl.todos, todo => todo.content === content);
+            todoListService.remove(content);
         }
+
+        // HANDLER(s)
 
         function onKeypress(evt) {
             // On enter
             if (evt.keyCode === 13) {
-                todoListCtrl.todos.unshift({
-                    content: todoListCtrl.newTodo,
-                    checked: false
-                });
+                todoListService.add(todoListCtrl.newTodo);
                 todoListCtrl.newTodo = "";
             }
         }
 
         function activate() {
-            todoListCtrl.todos = [{
-                content: 'test1',
-                checked: false
-            },{
-                content: 'test2',
-                checked: false
-            },{
-                content: 'test3',
-                checked: false
-            }];
+            todoListCtrl.todos = todoListService.list;
         }
 
         activate();
