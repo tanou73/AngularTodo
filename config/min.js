@@ -11,6 +11,18 @@ module.exports.tasks = {
         }
     },
 
+    babel: {
+        options: {
+            sourceMap: true,
+            presets: ['es2015']
+        },
+        dist: {
+            files: {
+                'temp/app.full.js': 'temp/app.full.js'
+            }
+        }
+    },
+
     uglify: {
         main: {
             src: 'temp/app.full.js',
