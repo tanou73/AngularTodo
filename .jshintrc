@@ -28,6 +28,9 @@
         "xdescribe": true,
         "xit": true,
         "spyOn": true,
-        "afterEach": true
+        "afterEach": true,
+        "require": true,
+        "browser": true,
+        "protractor": true
     }
 }

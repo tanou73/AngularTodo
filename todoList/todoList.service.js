@@ -26,11 +26,13 @@
         }
 
         function addTodo(content) {
-            _list.unshift({
-                content: content,
-                checked: false
-            });
-            _saveState();
+            if (!_(_list).find(A => A.content === content)) {
+              _list.unshift({
+                  content: content,
+                  checked: false
+              });
+              _saveState();
+            }
         }
 
         function removeTodo(content) {

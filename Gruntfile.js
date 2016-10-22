@@ -6,6 +6,9 @@ module.exports = function (grunt) {
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
+    // load protractor runner
+    grunt.loadNpmTasks('grunt-protractor-runner');
+
     var options = {
         pkg: require('./package.json')
     };
@@ -44,6 +47,9 @@ module.exports = function (grunt) {
         'karma:chrome'
     ]);
 
+    grunt.registerTask('e2e', [
+        'protractor:run'
+    ]);
 
     // WATCH HANDLING
     grunt.event.on('watch', function(action, filepath) {
