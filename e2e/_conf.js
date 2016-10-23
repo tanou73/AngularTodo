@@ -12,6 +12,6 @@ exports.config = {
     add: ['addTodo.e2e.js'],
     remove: ['removeTodo.e2e.js'],
     check: ['checkTodo.e2e.js'],
-    all: ['addTodo.e2e.js', 'removeTodo.e2e.js']
+    all: ['addTodo.e2e.js', 'removeTodo.e2e.js', 'checkTodo.e2e.js']
   }
 };
