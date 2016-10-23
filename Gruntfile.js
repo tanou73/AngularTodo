@@ -7,6 +7,8 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     // load protractor runner
+    grunt.loadNpmTasks('grunt-shell-spawn');
+    grunt.loadNpmTasks('grunt-wait');
     grunt.loadNpmTasks('grunt-protractor-runner');
 
     var options = {
@@ -48,7 +50,11 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('e2e', [
-        'protractor:run'
+        'shell:updateserver',
+        'shell:startserver',
+        'wait',
+        'protractor',
+        'shell:startserver:kill'
     ]);
 
     // WATCH HANDLING
