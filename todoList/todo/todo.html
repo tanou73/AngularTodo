@@ -1,6 +1,6 @@
 <div class="todo" layout="row" ng-class="{ checked: todoCtrl.todo.checked }">
     <!-- Checkbox -->
-    <md-checkbox flex="5" ng-model="todoCtrl.todo.checked" aria-label="check"></md-checkbox>
+    <md-checkbox flex="5" ng-model="todoCtrl.todo.checked" ng-change="todoCtrl.onChecked()" aria-label="check"></md-checkbox>
 
     <!-- Input -->
     <md-input-container flex="90" md-no-float>

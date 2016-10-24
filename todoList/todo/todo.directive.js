@@ -17,10 +17,11 @@
             bindToController: true
         };
 
-        function TodoController() {
+        function TodoController(todoListService) {
             var todoCtrl = this;
 
             todoCtrl.onDeleteIconClick = onDeleteIconClick;
+            todoCtrl.onChecked = onChecked;
 
             //////////////
 
@@ -28,6 +29,10 @@
                 todoCtrl.deleteCallback({
                     id: todoCtrl.todo.content
                 });
+            }
+
+            function onChecked() {
+                todoListService.save();
             }
         }
     }

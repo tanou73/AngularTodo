@@ -13,10 +13,11 @@
             get list() { return list(); },
             set list(list) {
                 _list = list;
-                _saveState();
+                saveState();
             },
             add: addTodo,
-            remove: removeTodo
+            remove: removeTodo,
+            save: saveState
         };
 
         ////////////
@@ -31,18 +32,18 @@
                   content: content,
                   checked: false
               });
-              _saveState();
+              saveState();
             }
         }
 
         function removeTodo(content) {
             _.remove(_list, todo => todo.content === content);
-            _saveState();
+            saveState();
         }
 
         // PRIVATE(s)
 
-        function _saveState() {
+        function saveState() {
             localStorage.setItem(LS_LIST_KEY, angular.toJson(_list));
         }
     }

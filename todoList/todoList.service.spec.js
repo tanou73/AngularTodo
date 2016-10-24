@@ -16,10 +16,9 @@
 
         it('should be abble to add an item', function () {
             // Given
-            var mock = "Banana";
             expect(todoListService.list.length).toBe(0);
             // When
-            todoListService.add(mock);
+            todoListService.add("Banana");
             // Then
             expect(todoListService.list.length).toBe(1);
             expect(todoListService.list[0].content).toBe("Banana");
