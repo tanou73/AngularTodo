@@ -1,1 +1,3 @@
-webBuild {}
+webBuild {
+  emails = 'dtumson@serial.ch'
+}
