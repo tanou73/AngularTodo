@@ -7,7 +7,7 @@ module.exports = function (grunt) {
     tasks: {
       wait: {
         options: {
-            delay: 500
+            delay: 2000
         },
         pause: {
             options: {}

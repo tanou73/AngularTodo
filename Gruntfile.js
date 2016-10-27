@@ -29,7 +29,6 @@ module.exports = function (grunt) {
         'ngtemplates',
         'cssmin',
         'concat',
-        'babel',
         'ngAnnotate',
         'copy',
         'htmlmin',
