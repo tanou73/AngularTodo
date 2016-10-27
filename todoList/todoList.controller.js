@@ -1,4 +1,4 @@
-(() => {
+(function() {
   angular
     .module('todoList')
     .controller('TodoListController', TodoListController);

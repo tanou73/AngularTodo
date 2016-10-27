@@ -31,7 +31,6 @@ module.exports = function (grunt) {
         'concat',
         'babel',
         'ngAnnotate',
-        // 'uglify',
         'copy',
         'htmlmin',
         'clean:after'
@@ -46,7 +45,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'dom_munger:read',
-        'karma:chrome'
+        'karma:phantom'
     ]);
 
     grunt.registerTask('e2e', [

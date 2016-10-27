@@ -1,4 +1,4 @@
-(() => {
+(function() {
 
     angular
         .module('todoList')
@@ -7,7 +7,7 @@
     function todoListService() {
         const LS_LIST_KEY = "todoList:list";
 
-        let _list = angular.fromJson(localStorage.getItem(LS_LIST_KEY) || "[]");
+        var _list = angular.fromJson(localStorage.getItem(LS_LIST_KEY) || "[]");
 
         return {
             get list() { return list(); },
@@ -27,7 +27,7 @@
         }
 
         function addTodo(content) {
-            if (!_(_list).find(A => A.content === content)) {
+            if (!_(_list).find(function (obj) { return obj.content === content; })) {
               _list.unshift({
                   content: content,
                   checked: false
@@ -37,7 +37,7 @@
         }
 
         function removeTodo(content) {
-            _.remove(_list, todo => todo.content === content);
+            _.remove(_list, function (todo) { return todo.content === content; });
             saveState();
         }
 
